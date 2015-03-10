@@ -117,17 +117,24 @@
   - measure: sum_invest_amt
     type: sum
     sql: ${invest_amt}
+    decimals: 2
+    html: $<%= rendered_value %>
     drill_fields: detail*
     
   - measure: sum_surrender_amt
     type: sum
     sql: ${surrender_amount}
+    decimals: 2
+    html: $<%= rendered_value %>
     drill_fields: detail*
 
   - measure: sum_commission_amt
     type: sum
     sql: ${commission_amt}
+    decimals: 2
+    html: $<%= rendered_value %>
     drill_fields: detail*
+  
 
   # ----- Sets of fields for drilling ------
   sets:
