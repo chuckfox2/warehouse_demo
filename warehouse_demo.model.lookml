@@ -11,29 +11,17 @@
 
 - explore: annuity_agent
 
-- explore: annuity_agent_staging
-
 - explore: annuity_annuitant
 
-- explore: annuity_annuitant_staging
-
 - explore: annuity_arrangement
-
-- explore: annuity_arrangement_staging
 
 - explore: annuity_audit
 
 - explore: annuity_esignature
 
-- explore: annuity_esignature_staging
-
 - explore: annuity_extension
 
-- explore: annuity_extension_staging
-
 - explore: annuity_funding
-
-- explore: annuity_funding_staging
 
 - explore: annuity_new_order
   joins:
