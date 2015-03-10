@@ -10,6 +10,10 @@
 - explore: adm_lu_transstage
 
 - explore: annuity_agent
+  joins:
+    - join: annuity_order
+      sql_on: ${annuity_agent.adm_trans_guid} = ${annuity_order.adm_trans_guid} and ${annuity_agent.order_id} = ${annuity_order.order_id}
+      relationship: many_to_one
 
 - explore: annuity_annuitant
 
@@ -23,31 +27,7 @@
 
 - explore: annuity_funding
 
-- explore: annuity_new_order
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: annuity_new_order_staging
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
 - explore: annuity_order
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: annuity_order_staging
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: annuity_order_test
   joins:
     - join: customer
       foreign_key: customer_id
@@ -55,87 +35,14 @@
 
 - explore: annuity_owner
 
-- explore: annuity_owner_staging
-
 - explore: annuity_referrer
-
-- explore: annuity_referrer_staging
 
 - explore: annuity_rider
 
-- explore: annuity_rider_staging
-
-- explore: annuity_sub_account_staging
-
 - explore: annuity_subaccount
-
-- explore: app_sub_reject_code
 
 - explore: customer
 
-- explore: customer_app_sub_reject_detail
-
-- explore: customer_app_sub_reject_file
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_dtccmember_code
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_file_header
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_file_type
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_invoice
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_ledger
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_license
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_project_fee
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_transaction_fee
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: customer_transaction_mapping
-  joins:
-    - join: customer
-      foreign_key: customer_id
-
-
-- explore: dtccmc
 
 - explore: idm_lu_bankholiday
 

@@ -2,6 +2,10 @@
   sql_table_name: AnnuityOrder
   fields:
 
+  - dimension: annuity_order_pk
+    sql: ${TABLE}.OrderID + CAST( ${TABLE}.AdmTransGUID AS varchar(40) ) 
+    primary_key: true
+
   - dimension: adm_trans_guid
     sql: ${TABLE}.AdmTransGUID
 
@@ -113,22 +117,27 @@
   - measure: sum_invest_amt
     type: sum
     sql: ${invest_amt}
+    drill_fields: detail*
     
   - measure: sum_surrender_amt
     type: sum
     sql: ${surrender_amount}
+    drill_fields: detail*
 
   - measure: sum_commission_amt
     type: sum
     sql: ${commission_amt}
+    drill_fields: detail*
 
   # ----- Sets of fields for drilling ------
   sets:
     detail:
-    - distributor_sub_office_name
-    - carrier_abbr_name
-    - plan_name
-    - customer.customer_id
+    - distributor_org_code
     - customer.customer_name
-    - customer.customer_short_name
+    - carrier_abbr_name
+    - order_id
+    - trans_type
+    - product_type_code
+    - plan_name
+    - invest_amt
 
