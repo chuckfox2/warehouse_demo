@@ -109,6 +109,18 @@
   - measure: count
     type: count
     drill_fields: detail*
+    
+  - measure: sum_invest_amt
+    type: sum
+    sql: ${invest_amt}
+    
+  - measure: sum_surrender_amt
+    type: sum
+    sql: ${surrender_amount}
+
+  - measure: sum_commission_amt
+    type: sum
+    sql: ${commission_amt}
 
   # ----- Sets of fields for drilling ------
   sets:
