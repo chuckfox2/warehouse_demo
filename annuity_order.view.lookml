@@ -109,7 +109,11 @@
   - measure: count
     type: count
     drill_fields: detail*
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> branch 'master' of git@chuckfox2_warehouse_demo_git:chuckfox2/warehouse_demo.git
 
   # ----- Sets of fields for drilling ------
   sets:
